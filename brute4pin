@@ -1,0 +1,10 @@
+#!/bin/bash
+# Brute Force Four Character Alphanumeric Password
+# Solution for Yrivnguna 6: Runs program ( ~/yrivnguna6) to determine result
+
+# Constructor to generate four character alphanumeric combinations:
+for i in {{a..z},{0..9}}{{a..z},{0..9}}{{a..z},{0..9}}{{a..z},{0..9}}
+do
+  # Execute program; grep result checking for a non-wrong answer
+  ~/yrivnguna6 $i | if grep -q -v "Wrong"; then print 'Answer: $i'; fi
+done
